@@ -4,15 +4,15 @@ from email.MIMEText import MIMEText
 import os
 
 SENHA_EMAIL = os.environ["SENHA_EMAIL"]
-  
-MY_EMAIL = os.environ["MY_EMAIL"] #YOUR EMAIL
-toaddr = ["evandrodalbem@prognoos.com", "cloves.sousa@prognoos.com"] # EMAIL's YOU WANT TO SEND TO
+MY_EMAIL = os.environ["MY_EMAIL"] 
+
+toaddr = ["evandrodalbem@prognoos.com", "cloves.sousa@prognoos.com"] 
 msg = MIMEMultipart()
 msg['From'] = MY_EMAIL
 msg['To'] = ", ".join(toaddr)
-msg['Subject'] = "Testando smtplib"   #"SUBJECT OF THE MAIL"
+msg['Subject'] = "Testando smtplib"   
    
-body = "Testando a biblioteca smtplib."    #"YOUR MESSAGE HERE"
+body = "Testando a biblioteca smtplib."    
 msg.attach(MIMEText(body, 'plain'))
     
 server = smtplib.SMTP('smtp.gmail.com', 587)
